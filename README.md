@@ -1,12 +1,15 @@
 <div align="center">
 
-# Easy Starter Messaging Bot
+# Easy Python Service Starter
 
-**A multi-channel bot foundation for Telegram, Bale, WhatsApp, and other messaging platforms using adapter-based architecture.**
+**A production-capable Python service foundation for workers, webhooks, scheduled jobs, integrations, automation, and messaging workloads.**
 
-[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?logo=github&logoColor=white)](https://github.com/easy-starter/easy-starter-messaging-bot/generate) [![CI](https://github.com/easy-starter/easy-starter-messaging-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/easy-starter/easy-starter-messaging-bot/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) ![Status: foundation](https://img.shields.io/badge/status-foundation-orange) ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Django](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white) ![Multi-channel](https://img.shields.io/badge/Multi--channel-1f6feb) ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+[![Use this template](https://img.shields.io/badge/use%20this%20template-2EA44F?logo=github&logoColor=white)](https://github.com/FonijBuild/easy-python-service-starter/generate)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+![Status: Foundation](https://img.shields.io/badge/status-foundation-F59E0B)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![uv](https://img.shields.io/badge/uv-DE5FE9) ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white) ![Service](https://img.shields.io/badge/runtime-service-7C3AED)
 
-[فارسی](README.fa.md) · [Documentation](https://github.com/easy-starter/easy-starter-docs) · [Report an issue](https://github.com/easy-starter/easy-starter-messaging-bot/issues/new/choose)
+[Documentation](https://github.com/FonijBuild/fonij-docs) · [Discussions](https://github.com/orgs/FonijBuild/discussions) · [Issues](https://github.com/FonijBuild/easy-python-service-starter/issues)
 
 </div>
 
@@ -15,68 +18,49 @@
 > [!IMPORTANT]
 > This repository is currently in the **foundation stage**. Do not treat it as production-ready until the first stable release.
 
-## What it solves
+## Best for
 
-Separates conversation and business logic from platform APIs so one bot product can support multiple channels without duplicating its core.
+- Background workers and scheduled jobs
+- Webhook consumers and integration services
+- Automation workloads
+- Messaging bots built through channel adapters
 
-## Use this template for
-
-- Command and workflow bots
-- Customer support and human-handoff bots
-- Notification and content-delivery bots
-- AI assistants and transactional bots
-- Telegram, Bale, and WhatsApp channel adapters
-
-**Not intended for:** A platform-specific codebase duplicated for every messenger or an unofficial API bypass.
+**Not for:** A full web frontend or a domain-heavy Django application that benefits from the Django API foundation.
 
 ## Baseline
 
-- Channel-neutral message and conversation models
-- Adapter interfaces for inbound updates and outbound messages
-- Webhook, polling, state, command, and middleware boundaries
-- Rate-limit, retry, deduplication, and observability conventions
-- Admin, tests, Docker, CI, and deployment profiles
-
-Detailed architecture, conventions, deployment profiles, and extension guides belong in [`docs/`](docs/). Feature work starts from [`specs/`](specs/), and agent rules live in [`AGENTS.md`](AGENTS.md).
+- Clear service, domain, integration, job, and worker boundaries
+- Environment validation and structured logging
+- Testing, typing, linting, CI, and container-ready workflows
+- Extension points for queues, schedulers, and channel adapters
+- AI-agent rules, specs, and architecture documentation
 
 ## Quick start
 
-1. Click **Use this template** or run:
+Preferred:
 
-   ```bash
-   gh repo create my-project --template easy-starter/easy-starter-messaging-bot --private --clone
-   cd my-project
-   ```
+```bash
+fonij create my-product
+```
 
-2. Set the project name, package metadata, and environment values.
-3. Start the project:
+Direct template use:
 
-   ```bash
-   cp .env.example .env
-   make setup
-   make dev
-   make check
-   ```
+```bash
+gh repo create my-product --template FonijBuild/easy-python-service-starter --private --clone
+cd my-product
+cp .env.example .env
+uv sync
+uv run pytest
+```
 
-4. Write the first feature specification under `specs/`.
-5. Implement the feature and keep `make check` green.
+## Project contract
 
-## Working agreement
+- `.fonij/starter.json` describes this foundation to Fonij.
+- `AGENTS.md` defines repository rules for AI coding agents.
+- `specs/` contains implementation-ready feature specifications.
+- `docs/` contains architecture and repository-specific guidance.
+- Keep quality checks green before merging changes.
 
-- Read `AGENTS.md` and the relevant specification before changing code.
-- Reuse existing patterns before adding abstractions or dependencies.
-- Never commit credentials or production data.
-- Run the repository quality checks before opening a pull request.
-- Record architecture-changing decisions in `docs/decisions/`.
+## Contributing
 
-## Documentation
-
-Start with `docs/getting-started.md`. Broader AI-first development guidance is maintained in [Easy Starter Docs](https://github.com/easy-starter/easy-starter-docs).
-
-## Contributing and support
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution rules and [`SUPPORT.md`](SUPPORT.md) for help. Security issues must follow [`SECURITY.md`](SECURITY.md).
-
-## License
-
-Released under the [MIT License](LICENSE).
+Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before contributing. Security issues must follow [`SECURITY.md`](SECURITY.md).
